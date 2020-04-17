@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace HourglassSum
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             int[][] arr = new int[6][];
 
