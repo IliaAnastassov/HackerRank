@@ -20,24 +20,30 @@ namespace SherlockAndAnagrams
         /// </summary>
         private static int CountAnagrams(string input)
         {
-            var anagramCount = 0;
+            var substringDictionary = new Dictionary<string, int>();
 
-            var substringSet = new HashSet<string>();
             for (int i = 0; i < input.Length; i++)
             {
                 for (int length = 1; length <= input.Length - i; length++)
                 {
-                    var substring = string.Concat(input.Substring(i, length).OrderBy(c => c));
+                    var orderedSubstring = string.Concat(input.Substring(i, length).OrderBy(c => c));
 
-                    if (!substringSet.Contains(substring))
+                    if (substringDictionary.ContainsKey(orderedSubstring))
                     {
-                        substringSet.Add(substring);
+                        substringDictionary[orderedSubstring]++;
                     }
                     else
                     {
-                        anagramCount++;
+                        substringDictionary.Add(orderedSubstring, 1);
                     }
                 }
+            }
+
+            var anagramCount = 0;
+
+            foreach (var value in substringDictionary.Values.Where(v => v > 1))
+            {
+                anagramCount += value * (value - 1) / 2;
             }
 
             return anagramCount;
