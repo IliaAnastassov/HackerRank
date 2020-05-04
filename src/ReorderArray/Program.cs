@@ -30,7 +30,7 @@ namespace ReorderArray
             return resultingArray;
         }
 
-        // TODO: Review logic -> not working properly
+        // TODO: Review logic
         private static void ReorderInPlace(int[] numbers)
         {
             var left = 0;
