@@ -7,42 +7,53 @@ namespace RepeatedString
     {
         static void Main()
         {
-            string s = Console.ReadLine();
-            long n = Convert.ToInt64(Console.ReadLine());
+            string s = "abcac";
+            long n = 10;
 
             long result = RepeatedString(s, n);
 
             Console.WriteLine(result);
         }
 
-        private static long RepeatedString(string s, long n)
+        private static long RepeatedString(string repeatedString, long length)
         {
-            long totalCount = 0;
+            var countInRepeatedString = 0;
+            var repetitionsCount = length / repeatedString.Length;
+            var countInRemaining = 0;
+            var remainingLenght = length % repeatedString.Length;
 
-            var countInWord = s.Where(c => c.Equals('a')).Count();
-            var wordLength = s.Count();
-
-            if (n < wordLength)
+            for (int i = 0; i < repeatedString.Length; i++)
             {
-                totalCount = s.Substring(0, (int)n).Where(c => c.Equals('a')).Count();
-            }
-            else if (n > wordLength)
-            {
-                var repetitionCount = n / wordLength;
-                totalCount = repetitionCount * countInWord;
-
-                if (n % wordLength != 0)
+                if (repeatedString[i] == 'a')
                 {
-                    var lastSubstring = s.Substring(0, (int)(n % wordLength));
-                    totalCount += lastSubstring.Where(c => c.Equals('a')).Count();
+                    countInRepeatedString++;
+
+                    if (i < remainingLenght)
+                    {
+                        countInRemaining++;
+                    }
                 }
             }
-            else
+
+            var totalCount = countInRepeatedString * repetitionsCount + countInRemaining;
+
+            return totalCount;
+        }
+
+        private static long RepeatedStringOptimized(string repeatedString, long length)
+        {
+            var countInRepeatedString = repeatedString.Count(c => c == 'a');
+            var repetitionsCount = length / repeatedString.Length;
+            var totalCount = countInRepeatedString * repetitionsCount;
+
+            var remainingLenght = length % repeatedString.Length;
+            if (remainingLenght > 0)
             {
-                totalCount = countInWord;
+                totalCount += repeatedString.Substring(0, (int)remainingLenght).Count(c => c == 'a');
             }
 
             return totalCount;
         }
+
     }
 }

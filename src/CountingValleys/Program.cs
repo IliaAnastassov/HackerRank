@@ -20,24 +20,19 @@ namespace CountingValleys
         private static int CountingValleys(int number, string path)
         {
             var valleyCount = 0;
+            var altitude = 0;
 
-            if (number > 0)
+            foreach (var direction in path)
             {
-                var currentAltitude = 0;
-
-                foreach (var direction in path)
+                if (direction == 'D')
                 {
-                    var previousAltitude = currentAltitude;
-                    if (direction == 'U')
-                    {
-                        currentAltitude++;
-                    }
-                    else if (direction == 'D')
-                    {
-                        currentAltitude--;
-                    }
+                    altitude--;
+                }
+                else if (direction == 'U')
+                {
+                    altitude++;
 
-                    if (currentAltitude == 0 && previousAltitude < currentAltitude)
+                    if (altitude == 0)
                     {
                         valleyCount++;
                     }

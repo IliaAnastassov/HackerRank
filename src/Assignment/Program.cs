@@ -10,12 +10,12 @@ public class NotAnItemException : Exception { }
 
 public class FileSystem
 {
-    private List<string> existingItems = new List<string>();
-    private List<string> deletedItems = new List<string>();
+    private readonly List<string> _existingItems = new List<string>();
+    private readonly List<string> _deletedItems = new List<string>();
 
     public FileSystem()
     {
-        existingItems.AddRange(new[] {
+        _existingItems.AddRange(new[] {
           "root/level1folder1",
           "root/level1folder2",
           "root/level1folder2/level2folder1",
@@ -44,7 +44,7 @@ public class FileSystem
 
     private void EnsureExists(string path)
     {
-        if (string.IsNullOrEmpty(path) || !existingItems.Contains(path))
+        if (string.IsNullOrEmpty(path) || !_existingItems.Contains(path))
         {
             throw new ItemNotFoundException();
         }
@@ -64,7 +64,7 @@ public class FileSystem
         string[] result = null;
         lock (this)
         {
-            result = existingItems.ToArray();
+            result = _existingItems.ToArray();
         }
         return result;
     }
@@ -81,8 +81,8 @@ public class FileSystem
         EnsureIsFileSystemItem(path);
         EnsureExists(path);
         EnsureEmpty(path);
-        existingItems.Remove(path);
-        deletedItems.Add(path);
+        _existingItems.Remove(path);
+        _deletedItems.Add(path);
     }
 
     /// <summary>
@@ -96,7 +96,7 @@ public class FileSystem
     {
         EnsureIsFileSystemItem(path);
         EnsureExists(path);
-        foreach (var existingItem in existingItems)
+        foreach (var existingItem in _existingItems)
         {
             if (existingItem != path && existingItem.StartsWith(path))
             {
@@ -129,9 +129,7 @@ public class FileSystemCleaner
 
     /// <summary>
     /// Deletes empty items from the specified paths. 
-    /// 
     /// If deletion of an item makes another item specified in <paramref name="paths"/> empty, the latter is expected to be deleted as well.
-    ///
     /// </summary>
     /// <param name="paths">List of paths to items on the file system.</param>   
     public void DeleteEmptyItems(List<string> paths)
@@ -169,9 +167,9 @@ public class FileSystemCleaner
 
 class Solution
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        TextWriter textWriter = new StreamWriter(Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
         List<string> paths = new List<string>();
 

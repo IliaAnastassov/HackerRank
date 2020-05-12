@@ -30,7 +30,6 @@ namespace ReorderArray
             return resultingArray;
         }
 
-        // TODO: Review logic
         private static void ReorderInPlace(int[] numbers)
         {
             var left = 0;
@@ -38,15 +37,21 @@ namespace ReorderArray
 
             while (left < right)
             {
-                if (numbers[left] % 2 != 0 && numbers[right] % 2 == 0)
+                if (numbers[left] % 2 != 0)
                 {
-                    numbers[left] ^= numbers[right];
-                    numbers[right] ^= numbers[left];
-                    numbers[left] ^= numbers[right];
-                }
+                    if (numbers[right] % 2 == 0)
+                    {
+                        numbers[left] ^= numbers[right];
+                        numbers[right] ^= numbers[left];
+                        numbers[left] ^= numbers[right];
+                    }
 
-                left++;
-                right--;
+                    right--;
+                }
+                else
+                {
+                    left++;
+                }
             }
         }
     }
