@@ -54,6 +54,5 @@ namespace RepeatedString
 
             return totalCount;
         }
-
     }
 }

@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadManager", "Download
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReorderArray", "ReorderArray\ReorderArray.csproj", "{9279755E-D6F8-46F8-8CA0-44917A37D01A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SockMerchant", "SockMerchant\SockMerchant.csproj", "{04C6375E-333E-4C4E-9034-727ED0836BA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SockMerchant", "SockMerchant\SockMerchant.csproj", "{04C6375E-333E-4C4E-9034-727ED0836BA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicArray", "DynamicArray\DynamicArray.csproj", "{281C4929-957F-41D1-8A03-46C0D05CCB76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +129,10 @@ Global
 		{04C6375E-333E-4C4E-9034-727ED0836BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04C6375E-333E-4C4E-9034-727ED0836BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04C6375E-333E-4C4E-9034-727ED0836BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281C4929-957F-41D1-8A03-46C0D05CCB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281C4929-957F-41D1-8A03-46C0D05CCB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281C4929-957F-41D1-8A03-46C0D05CCB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281C4929-957F-41D1-8A03-46C0D05CCB76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{6559ACC5-4298-4F78-9627-101F91351476} = {5DD27A9E-44C1-4753-8932-9618D029EC6C}
 		{9279755E-D6F8-46F8-8CA0-44917A37D01A} = {5DD27A9E-44C1-4753-8932-9618D029EC6C}
 		{04C6375E-333E-4C4E-9034-727ED0836BA2} = {76080D49-40CE-4BCE-95DE-AF4B1A738260}
+		{281C4929-957F-41D1-8A03-46C0D05CCB76} = {1ADEC49F-B6CB-4974-B269-1327A071B653}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A16A8AD0-3FF3-4ED2-BF81-F899F9BC1FBE}

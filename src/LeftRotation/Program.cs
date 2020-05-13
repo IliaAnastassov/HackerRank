@@ -25,40 +25,21 @@ namespace LeftRotation
 
         private static void RotateLeftOptimized(int[] numbers, int rotationsCount)
         {
-            var gcd = GetGcd(numbers.Length, rotationsCount);
-
-            int i, j, k, temp;
-            for (i = 0; i < gcd; i++)
+            if (rotationsCount % numbers.Length == 0)
             {
-                temp = numbers[i];
-                j = i;
-                while (true)
-                {
-                    k = j + rotationsCount;
-                    if (k >= numbers.Length)
-                    {
-                        k -= numbers.Length;
-                    }
-                    if (k == i)
-                    {
-                        break;
-                    }
-                    numbers[j] = numbers[k];
-                    j = k;
-                }
-
-                numbers[j] = temp;
+                return;
             }
-        }
-
-        private static int GetGcd(int val1, int val2)
-        {
-            if (val2 == 0)
+            else if (rotationsCount > numbers.Length)
             {
-                return val1;
+                rotationsCount %= numbers.Length;
             }
 
-            return GetGcd(val2, val1 % val2);
+            var rotated = new int[numbers.Length];
+
+            Array.Copy(numbers, 0, rotated, numbers.Length - rotationsCount, rotationsCount);
+            Array.Copy(numbers, rotationsCount, rotated, 0, numbers.Length - rotationsCount);
+
+            rotated.CopyTo(numbers, 0);
         }
     }
 }
