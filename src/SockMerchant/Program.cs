@@ -5,7 +5,7 @@ namespace SockMerchant
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var socks = new int[] { 10, 20, 20, 10, 10, 30, 50, 10, 20 };
             var pairsCount = GetPairCount(socks);

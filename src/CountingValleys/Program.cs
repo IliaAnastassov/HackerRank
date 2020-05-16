@@ -12,12 +12,12 @@ namespace CountingValleys
             int n = Convert.ToInt32(Console.ReadLine());
             string s = Console.ReadLine();
 
-            int result = CountingValleys(n, s);
+            int result = CountingValleys(s);
 
             textWriter.WriteLine(result);
         }
 
-        private static int CountingValleys(int number, string path)
+        private static int CountingValleys(string path)
         {
             var valleyCount = 0;
             var altitude = 0;

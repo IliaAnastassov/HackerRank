@@ -6,7 +6,7 @@ namespace DownloadManager
 {
     public class DownloadManager
     {
-        private List<DownloadJob> _jobs;
+        private readonly List<DownloadJob> _jobs;
 
         public DownloadManager()
         {

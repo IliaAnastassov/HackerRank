@@ -3,6 +3,7 @@ using System.IO;
 
 namespace FileSystemDeleteEmptyItems
 {
+    // TODO: Move this project to separate solution!!!
     public class Program
     {
         public static void Main()
