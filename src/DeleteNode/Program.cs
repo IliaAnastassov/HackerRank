@@ -10,28 +10,61 @@ namespace DeleteNode
             linkedList.InsertNode(0);
             linkedList.InsertNode(1);
             linkedList.InsertNode(2);
+            linkedList.InsertNode(3);
+            linkedList.InsertNode(4);
+            linkedList.InsertNode(5);
 
-            var deleted = DeleteNode(linkedList.Head, 1);
-            Console.WriteLine(deleted);
+            ReversePrint(linkedList.Head);
         }
 
-        static SinglyLinkedListNode DeleteNode(SinglyLinkedListNode head, int position)
+        private static SinglyLinkedListNode DeleteNode(SinglyLinkedListNode head, int position)
         {
-            var current = head;
-            SinglyLinkedListNode previous = null;
-            for (int i = 0; i < position; i++)
+            if (position != 0)
             {
-                previous = current;
-                current = current.next;
+                var current = head;
+                SinglyLinkedListNode previous = null;
+                for (int i = 0; i < position; i++)
+                {
+                    previous = current;
+                    current = current.next;
+                }
+
+                previous.next = current.next;
+            }
+            else
+            {
+                head = head.next;
             }
 
-            previous.next = current.next;
+            return head;
+        }
 
-            return current;
+        static void ReversePrint(SinglyLinkedListNode head)
+        {
+            if (head != null)
+            {
+                ReversePrint(head.next);
+                Console.WriteLine(head.data);
+            }
+        }
+
+        private static void PrintSinglyLinkedList(SinglyLinkedListNode node, string separator)
+        {
+            while (node != null)
+            {
+                Console.Write(node.data);
+
+                node = node.next;
+
+                if (node != null)
+                {
+                    Console.Write(separator);
+                }
+            }
         }
     }
 
-    class SinglyLinkedListNode
+    public class SinglyLinkedListNode
     {
         public int data;
         public SinglyLinkedListNode next;
@@ -43,7 +76,7 @@ namespace DeleteNode
         }
     }
 
-    class SinglyLinkedList
+    public class SinglyLinkedList
     {
         public SinglyLinkedListNode Head;
         public SinglyLinkedListNode Tail;
