@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DeleteNode
+namespace LinkedListOperations
 {
     public class Program
     {
@@ -14,10 +14,11 @@ namespace DeleteNode
             linkedList.InsertNode(4);
             linkedList.InsertNode(5);
 
-            ReversePrint(linkedList.Head);
+            var head = Reverse(linkedList.Head);
+            PrintSinglyLinkedList(head, " ");
         }
 
-        private static SinglyLinkedListNode DeleteNode(SinglyLinkedListNode head, int position)
+        public static SinglyLinkedListNode DeleteNode(SinglyLinkedListNode head, int position)
         {
             if (position != 0)
             {
@@ -39,7 +40,7 @@ namespace DeleteNode
             return head;
         }
 
-        static void ReversePrint(SinglyLinkedListNode head)
+        public static void ReversePrint(SinglyLinkedListNode head)
         {
             if (head != null)
             {
@@ -48,7 +49,24 @@ namespace DeleteNode
             }
         }
 
-        private static void PrintSinglyLinkedList(SinglyLinkedListNode node, string separator)
+        public static SinglyLinkedListNode Reverse(SinglyLinkedListNode head)
+        {
+            var current = head;
+            SinglyLinkedListNode previous = null;
+            SinglyLinkedListNode next;
+
+            while (current != null)
+            {
+                next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+
+            return previous;
+        }
+
+        public static void PrintSinglyLinkedList(SinglyLinkedListNode node, string separator)
         {
             while (node != null)
             {
