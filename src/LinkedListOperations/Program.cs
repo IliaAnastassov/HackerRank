@@ -60,28 +60,27 @@ namespace LinkedListOperations
             return previous;
         }
 
-        public static SinglyLinkedListNode ReverseRecursive(SinglyLinkedListNode head)
+        public static SinglyLinkedListNode ReverseRecursive(SinglyLinkedListNode node)
         {
-            if (head == null)
+            if (node == null)
             {
-                return head;
+                return node;
             }
 
-            // last node or only one node
-            if (head.next == null)
+            // Last node or only one node
+            if (node.next == null)
             {
-                return head;
+                return node;
             }
 
-            var newHeadNode = ReverseRecursive(head.next);
+            var head = ReverseRecursive(node.next);
 
-            // change references for middle chain
-            head.next.next = head;
-            head.next = null;
+            // Change references for middle chain
+            node.next.next = node;
+            node.next = null;
 
-            // send back new head
-            // node in every recursion
-            return newHeadNode;
+            // Send back new head node in every recursion
+            return head;
         }
 
         public static void PrintSinglyLinkedList(SinglyLinkedListNode node, string separator)
