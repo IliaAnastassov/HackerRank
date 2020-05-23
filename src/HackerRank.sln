@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepeatedString", "RepeatedS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HourglassSum", "HourGlassArray\HourglassSum.csproj", "{B24E8AFD-72A6-4959-897D-489F2FC7D3A5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arrays", "Arrays", "{1ADEC49F-B6CB-4974-B269-1327A071B653}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Array", "Array", "{1ADEC49F-B6CB-4974-B269-1327A071B653}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeftRotation", "LeftRotation\LeftRotation.csproj", "{ADEDFDD8-C3B8-4610-B24D-50D4288627B4}"
 EndProject
@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayManipulation", "ArrayM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimumSwaps", "MinimumSwaps\MinimumSwaps.csproj", "{67E6AF54-3501-4C75-A39A-DF93FA6C5A79}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DictionariesHashsets", "DictionariesHashsets", "{D959E114-4425-4361-9696-746450465154}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DictionaryHashset", "DictionaryHashset", "{D959E114-4425-4361-9696-746450465154}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RansomNote", "RansomNote\RansomNote.csproj", "{CFF0D330-343C-4FE1-BAEE-3E25FB2D16DE}"
 EndProject
@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VMWare", "VMWare", "{5DD27A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSystemDeleteEmptyItems", "FileSystemDeleteEmptyItems\FileSystemDeleteEmptyItems.csproj", "{3C1DEDC9-9195-4A89-8D20-58FA2C713407}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trees", "Trees", "{6C08FDF4-CFE9-4DA0-AC0F-1C5BE7FA1C73}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tree", "Tree", "{6C08FDF4-CFE9-4DA0-AC0F-1C5BE7FA1C73}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment", "Assignment\Assignment.csproj", "{E907F1B0-50CE-4270-80DC-9030CC41B4E3}"
 EndProject
@@ -53,9 +53,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicArray", "DynamicArra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SparseArrays", "SparseArrays\SparseArrays.csproj", "{94C01CF8-9F47-4416-9196-E2FFE5A22FAF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedLists", "LinkedLists", "{6FEAF33E-9574-4F04-A37B-13FA0359420D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedList", "LinkedList", "{6FEAF33E-9574-4F04-A37B-13FA0359420D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListOperations", "LinkedListOperations\LinkedListOperations.csproj", "{096382C4-E964-4B9A-AAD8-FFF7814880CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListOperations", "LinkedListOperations\LinkedListOperations.csproj", "{096382C4-E964-4B9A-AAD8-FFF7814880CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stack", "Stack", "{CAC632F5-8281-4D78-8669-B6074CD92B06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalancedParanthesesCheck", "BalancedParanthesesCheck\BalancedParanthesesCheck.csproj", "{A6FD7311-C62E-460B-906A-46D2365A2242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +151,10 @@ Global
 		{096382C4-E964-4B9A-AAD8-FFF7814880CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{096382C4-E964-4B9A-AAD8-FFF7814880CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{096382C4-E964-4B9A-AAD8-FFF7814880CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6FD7311-C62E-460B-906A-46D2365A2242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6FD7311-C62E-460B-906A-46D2365A2242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6FD7311-C62E-460B-906A-46D2365A2242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6FD7311-C62E-460B-906A-46D2365A2242}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,6 +181,7 @@ Global
 		{281C4929-957F-41D1-8A03-46C0D05CCB76} = {1ADEC49F-B6CB-4974-B269-1327A071B653}
 		{94C01CF8-9F47-4416-9196-E2FFE5A22FAF} = {1ADEC49F-B6CB-4974-B269-1327A071B653}
 		{096382C4-E964-4B9A-AAD8-FFF7814880CB} = {6FEAF33E-9574-4F04-A37B-13FA0359420D}
+		{A6FD7311-C62E-460B-906A-46D2365A2242} = {CAC632F5-8281-4D78-8669-B6074CD92B06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A16A8AD0-3FF3-4ED2-BF81-F899F9BC1FBE}

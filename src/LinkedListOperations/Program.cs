@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LinkedListOperations
 {
@@ -14,7 +16,7 @@ namespace LinkedListOperations
             linkedList.InsertNode(4);
             linkedList.InsertNode(5);
 
-            var head = ReverseRecursive(linkedList.Head);
+            var head = ReverseStack(linkedList.Head);
             PrintSinglyLinkedList(head, " ");
         }
 
@@ -48,11 +50,11 @@ namespace LinkedListOperations
 
             while (current != null)
             {
-                // Store the link for the next node and link the current node to the previous node
+                // store the link for the next node and link the current node to the previous node
                 next = current.next;
                 current.next = previous;
 
-                // Set previous node to current and current to next
+                // set previous node to current and current to next
                 previous = current;
                 current = next;
             }
@@ -62,12 +64,7 @@ namespace LinkedListOperations
 
         public static SinglyLinkedListNode ReverseRecursive(SinglyLinkedListNode node)
         {
-            if (node == null)
-            {
-                return node;
-            }
-
-            // Last node or only one node
+            // last node or only one node
             if (node.next == null)
             {
                 return node;
@@ -75,11 +72,37 @@ namespace LinkedListOperations
 
             var head = ReverseRecursive(node.next);
 
-            // Change references for middle chain
+            // change references for middle chain
             node.next.next = node;
             node.next = null;
 
-            // Send back new head node in every recursion
+            // send back new head node in every recursion
+            return head;
+        }
+
+        public static SinglyLinkedListNode ReverseStack(SinglyLinkedListNode head)
+        {
+            var stack = new Stack<SinglyLinkedListNode>();
+
+            // push all nodes in the stack
+            var current = head;
+            while (current != null)
+            {
+                stack.Push(current);
+                current = current.next;
+            }
+
+            // store the top element of the stack as the head
+            head = stack.Pop();
+            current = head;
+            while (stack.Any())
+            {
+                // build the links from head to tail
+                current.next = stack.Pop();
+                current = current.next;
+            }
+            current.next = null; // set tail's link to null
+
             return head;
         }
 
