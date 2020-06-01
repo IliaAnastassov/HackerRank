@@ -6,7 +6,7 @@ namespace NewYearChaos
     {
         static void Main()
         {
-            int[] queue = Array.ConvertAll(Console.ReadLine().Split(' '), n => Convert.ToInt32(n));
+            int[] queue = Array.ConvertAll(Console.ReadLine().Split(), n => Convert.ToInt32(n));
 
             GetMinimumBribes(queue);
         }

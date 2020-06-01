@@ -6,7 +6,7 @@ namespace JumpingOnTheClouds
     {
         static void Main()
         {
-            int[] clouds = Array.ConvertAll(Console.ReadLine().Split(' '), c => Convert.ToInt32(c));
+            int[] clouds = Array.ConvertAll(Console.ReadLine().Split(), c => Convert.ToInt32(c));
 
             int result = JumpingOnClouds(clouds);
 

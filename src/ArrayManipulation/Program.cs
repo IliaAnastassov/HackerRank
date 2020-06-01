@@ -7,7 +7,7 @@ namespace ArrayManipulation
     {
         static void Main()
         {
-            var input = Console.ReadLine().Split(' ');
+            var input = Console.ReadLine().Split();
             var arraySize = Convert.ToInt32(input[0]);
             var operationsCount = Convert.ToInt32(input[1]);
 

@@ -6,7 +6,7 @@ namespace MinimumSwaps
     {
         public static void Main()
         {
-            var numbers = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+            var numbers = Array.ConvertAll(Console.ReadLine().Split(), arrTemp => Convert.ToInt32(arrTemp));
 
             var result = GetMinimumSwapsOptimized(numbers);
         }

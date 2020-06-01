@@ -9,7 +9,7 @@ namespace LeftRotation
         {
             var rotationsCount = Convert.ToInt32(Console.ReadLine());
 
-            var numbers = Array.ConvertAll(Console.ReadLine().Split(' '), n => Convert.ToInt32(n));
+            var numbers = Array.ConvertAll(Console.ReadLine().Split(), n => Convert.ToInt32(n));
             RotateLeftOptimized(numbers, rotationsCount);
 
             Console.WriteLine(string.Join(" ", numbers));

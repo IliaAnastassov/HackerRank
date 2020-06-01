@@ -14,18 +14,18 @@ namespace AppleAndOrange
         /// </summary>
         public static void Main()
         {
-            var houseDimensions = Console.ReadLine().Split(' ');
+            var houseDimensions = Console.ReadLine().Split();
             var houseStart = Convert.ToInt32(houseDimensions[0]);
             var houseEnd = Convert.ToInt32(houseDimensions[1]);
 
-            var treePositions = Console.ReadLine().Split(' ');
+            var treePositions = Console.ReadLine().Split();
             var appleTree = Convert.ToInt32(treePositions[0]);
             var orangeTree = Convert.ToInt32(treePositions[1]);
 
             var applesOrangesCount = Console.ReadLine();
 
-            var apples = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
-            var oranges = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+            var apples = Array.ConvertAll(Console.ReadLine().Split(), s => int.Parse(s));
+            var oranges = Array.ConvertAll(Console.ReadLine().Split(), s => int.Parse(s));
 
             var result = CountApplesAndOranges(houseStart, houseEnd, appleTree, orangeTree, apples, oranges);
 

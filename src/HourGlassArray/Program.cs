@@ -12,7 +12,7 @@ namespace HourglassSum
 
             for (int i = 0; i < 6; i++)
             {
-                arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+                arr[i] = Array.ConvertAll(Console.ReadLine().Split(), s => Convert.ToInt32(s));
             }
 
             int result = HourglassSum(arr);

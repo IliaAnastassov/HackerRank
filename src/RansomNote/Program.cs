@@ -7,8 +7,8 @@ namespace RansomNote
     {
         public static void Main()
         {
-            var magazine = Console.ReadLine().Split(' ');
-            var note = Console.ReadLine().Split(' ');
+            var magazine = Console.ReadLine().Split();
+            var note = Console.ReadLine().Split();
 
             var containsNote = ContainsNote(magazine, note);
             Console.WriteLine(containsNote);
